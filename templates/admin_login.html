@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Styling for the form container */
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        /* Styling for each input field */
+        div {
+            margin-bottom: 15px;
+        }
+
+        /* Styling for labels */
+        label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Styling for the form inputs */
+        input {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Styling for the submit button */
+        button, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="post">
+        <h1>Admin Login</h1>
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.email.label }} <br>
+            {{ form.email }}
+        </div>
+        <div>
+            {{ form.password.label }} <br>
+            {{ form.password }}
+        </div>
+        <div>
+            {{ form.submit.label }} <br>
+            {{ form.submit }}
+        </div>
+    </form>
+</body>
+</html>

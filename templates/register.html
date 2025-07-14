@@ -1,0 +1,104 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Bitcoin Price Prediction</title>
+    <style>
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('https://images.hdqwalls.com/download/bitcoin-cryptocurrency5k-ne-3840x2160.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .register-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .register-form h1, .register-form h2 {
+            color: #0df430;
+        }
+        .register-form label {
+            color: #23f123;
+        }
+        .register-form input[type="text"], .register-form input[type="password"], .register-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #0b0a0a;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .register-form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #1dce1d;
+            color: rgb(5, 4, 4);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .register-form button:hover {
+            background-color: #45a049;
+        }
+        .create-account a {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-form">
+            <h1>Bitcoin Price Prediction</h1>
+            <h2>Register</h2>
+            <form method="POST" action="{{ url_for('register') }}">
+                {{ form.hidden_tag() }}
+                <label for="username">Username</label>
+                {{ form.username(class="form-control") }}
+                <label for="email">Email</label>
+                {{ form.email(class="form-control") }}
+                <label for="password">Password</label>
+                {{ form.password(class="form-control") }}
+                <label for="confirm_password">Confirm Password</label>
+                {{ form.confirm_password(class="form-control") }}
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,191 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Bitcoin Price Prediction</title>
+    <style>
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('https://images.hdqwalls.com/download/bitcoin-cryptocurrency5k-ne-3840x2160.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+         .login-container {
+            background-color: rgba(6, 16, 7, 0.41);
+            padding: 12px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+        }
+        .login-form h1, .login-form h2 {
+            color: #0df430;
+            margin-bottom: 20px;
+        }
+        .login-form label {
+            color: #23f123;
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .login-form input[type="text"], .login-form input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #1c10c9f7;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #1dce1d;
+            color: rgb(249, 248, 248);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-form button:hover {
+            background-color: #45a049;
+        }
+        .admin-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 6px;
+        }
+        .admin-button:hover {
+            background-color: #0056b3;
+        }
+        .create-account a {
+            color: #f4f9f4;
+        }
+        .alert {
+            color: red;
+            font-size: 14px;
+        }
+        .flash-message {
+            color: #d9534f;
+            background-color: #120f0f;
+            padding: 1px;
+            border-radius: 5px;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* Admin section style */
+        .admin-section {
+            margin-top: 2px;
+            padding: 1px;
+            background-color: rgba(0, 0, 155, 0.5); /* Blue background for admin section */
+            border-radius: 5px;
+            text-align: center;
+        }
+        .admin-section h3 {
+            color: #fff;
+            font-size: 10px;
+            margin-bottom: 0.1px;
+        }
+        .admin-section p {
+            color: #d9f5d9;
+            font-size: 12px;
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <h1>Bitcoin Price Prediction</h1>
+            <h2>Login</h2>
+
+            <!-- Flash message for login errors or success -->
+             {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-message">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('login') }}">
+                {{ form.hidden_tag() }} 
+                
+                <!-- Email Field -->
+                 <label for="email">Email</label>
+                {{ form.email(class="form-control", placeholder="Enter your email") }}
+                  
+                <!-- Password Field -->
+                 <label for="password">Password</label>
+                {{ form.password(class="form-control", placeholder="Enter your password") }}
+                
+                <!-- Error Message (if any) -->
+                 {% if form.errors %}
+                    <div class="alert">
+                        {% for field, errors in form.errors.items() %}
+                            {% for error in errors %}
+                                <p><strong>{{ field }}:</strong> {{ error }}</p>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <!-- Submit Button -->
+                
+                <button type="submit">Login</button>
+
+                <!-- Forgot Password Link -->
+             <!-- <p class="create-account"><a href="{{ url_for('forgot_password') }}">Forgot your password?</a></p>
+            </form>  -->    
+
+            <div class="create-account">
+                <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+            </div>
+
+            <!-- Admin Login Section -->
+            <div class="admin-section">
+                <!-- <h3>Admin Login</h3>  -->
+                <!-- <p>If you are an administrator, click the button below to access the admin login page.</p> -->
+            <button class="admin-button" onclick="window.location.href='{{ url_for('admin_login') }}'">Admin Login</button> 
+             </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
