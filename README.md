@@ -1,6 +1,3 @@
-Absolutely, Lakku! Here's your full `README.md` for the **Bitcoin Price Prediction using ML** project—styled like your Shopy e-commerce app, and now including the project structure section:
-
----
 
 # 🧠 Bitcoin Price Prediction using ML  
 A beginner-friendly academic project that predicts Bitcoin price movement using machine learning, built with Python and Flask. It features a clean web interface, modular backend, and real-time prediction capability.
