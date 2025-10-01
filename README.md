@@ -157,7 +157,3 @@ GET    /admin        # Admin dashboard
 
 ## 📄 About  
 Bitcoin price prediction project using ML and Flask, designed for academic learning and practical deployment.
-
----
-
-Let me know if you want this turned into a GitHub Pages site or styled with badges and a logo. I can help you make it portfolio-ready.
